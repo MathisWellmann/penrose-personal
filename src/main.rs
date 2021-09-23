@@ -13,7 +13,6 @@ mod hooks_startup_script;
 
 use penrose::{
     contrib::{
-        extensions::Scratchpad,
         hooks::{DefaultWorkspace, LayoutSymbolAsRootName},
     },
     core::{
@@ -28,7 +27,7 @@ use penrose::{
     draw::{dwm_bar, Color, TextStyle},
     logging_error_handler,
     xcb::{XcbConnection, XcbDraw, XcbHooks},
-    Backward, Forward, Result,
+    Backward, Forward, Result, More, Less,
 };
 
 use hooks_startup_script::StartupScript;
@@ -81,19 +80,8 @@ fn main() -> Result<()> {
         // Windows with a matching WM_CLASS will always float
         .floating_classes(vec!["dmenu", "dunst", "polybar"])
         // Client border colors are set based on X focus
-        .focused_border("#cc241d")?
+        .focused_border("#e5a61d")?
         .unfocused_border("#3c3836")?;
-
-    // When specifying a layout, most of the time you will want LayoutConf::default() as shown
-    // below, which will honour gap settings and will not be run on focus changes (only when
-    // clients are added/removed). To customise when/how each layout is applied you can create a
-    // LayoutConf instance with your desired properties enabled.
-    let follow_focus_conf = LayoutConf {
-        floating: false,
-        gapless: true,
-        follow_focus: true,
-        allow_wrapping: false,
-    };
 
     // Default number of clients in the main layout area
     let n_main = 1;
@@ -125,11 +113,6 @@ fn main() -> Result<()> {
      * modify their behaviour if desired.
      */
 
-    // Scratchpad is an extension: it makes use of the same Hook points as the examples below but
-    // additionally provides a 'toggle' method that can be bound to a key combination in order to
-    // trigger the bound scratchpad client.
-    let sp = Scratchpad::new("alacritty", 0.8, 0.8);
-
     let bar = dwm_bar(
         XcbDraw::new()?,
         HEIGHT,
@@ -153,13 +136,12 @@ fn main() -> Result<()> {
         LayoutSymbolAsRootName::new(),
         // Here we are using a contrib hook that requires configuration to set up a default workspace
         // on workspace "9". This will set the layout and spawn the supplied programs if we make
-        // workspacSe "9" active while it has no clients.
+        // workspacSe "1" active while it has no clients.
         DefaultWorkspace::new(
             "1",
             "[botm]",
             vec![my_terminal, my_terminal, my_file_manager],
         ),
-        sp.get_hook(),
         Box::new(bar),
         Box::new(StartupScript::new("~/penrose_startup.sh")),
     ];
@@ -177,7 +159,7 @@ fn main() -> Result<()> {
         // Program launch
         "M-semicolon" => run_external!(my_program_launcher);
         "M-Return" => run_external!(my_terminal);
-        "M-f" => run_external!(my_file_manager);
+        "M-e" => run_external!(my_file_manager);
 
         // client management
         "M-j" => run_internal!(cycle_client, Forward);
@@ -186,7 +168,6 @@ fn main() -> Result<()> {
         "M-S-k" => run_internal!(drag_client, Backward);
         "M-q" => run_internal!(kill_client);
         "M-F" => run_internal!(toggle_client_fullscreen, &Selector::Focused);
-        "M-slash" => sp.toggle();
 
         // workspace management
         "M-Tab" => run_internal!(toggle_workspace);
@@ -196,10 +177,8 @@ fn main() -> Result<()> {
         "M-S-bracketleft" => run_internal!(drag_workspace, Backward);
 
         // Layout management
-        //"M-grave" => run_internal!(cycle_layout, Forward);
-        //"M-S-grave" => run_internal!(cycle_layout, Backward);
-        //"M-A-Up" => run_internal!(update_max_main, More);
-        // "M-A-Down" => run_internal!(update_max_main, Less);
+        "M-A-Up" => run_internal!(update_max_main, Less);
+        "M-A-Down" => run_internal!(update_max_main, More);
         // "M-A-Right" => run_internal!(update_main_ratio, More);
         // "M-A-Left" => run_internal!(update_main_ratio, Less);
 
