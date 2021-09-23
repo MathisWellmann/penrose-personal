@@ -12,14 +12,12 @@ extern crate penrose;
 mod hooks_startup_script;
 
 use penrose::{
-    contrib::{
-        hooks::{DefaultWorkspace, LayoutSymbolAsRootName},
-    },
+    contrib::hooks::{DefaultWorkspace, LayoutSymbolAsRootName},
     core::{
         config::Config,
         helpers::index_selectors,
         hooks::Hook,
-        layout::{bottom_stack, side_stack, Layout, LayoutConf},
+        layout::{bottom_stack, Layout, LayoutConf},
         manager::WindowManager,
         ring::Selector,
         xconnection::{XConn, Xid},
@@ -27,7 +25,7 @@ use penrose::{
     draw::{dwm_bar, Color, TextStyle},
     logging_error_handler,
     xcb::{XcbConnection, XcbDraw, XcbHooks},
-    Backward, Forward, Result, More, Less,
+    Backward, Forward, Less, More, Result,
 };
 
 use hooks_startup_script::StartupScript;
@@ -164,23 +162,21 @@ fn main() -> Result<()> {
         // client management
         "M-j" => run_internal!(cycle_client, Forward);
         "M-k" => run_internal!(cycle_client, Backward);
-        "M-S-j" => run_internal!(drag_client, Forward);
-        "M-S-k" => run_internal!(drag_client, Backward);
+        "M-h" => run_internal!(cycle_screen, Forward);
+        "M-l" => run_internal!(cycle_screen, Backward);
         "M-q" => run_internal!(kill_client);
         "M-F" => run_internal!(toggle_client_fullscreen, &Selector::Focused);
 
         // workspace management
         "M-Tab" => run_internal!(toggle_workspace);
-        "M-Left" => run_internal!(cycle_screen, Forward);
-        "M-Right" => run_internal!(cycle_screen, Backward);
-        "M-S-bracketright" => run_internal!(drag_workspace, Forward);
-        "M-S-bracketleft" => run_internal!(drag_workspace, Backward);
+        "M-p" => run_internal!(drag_workspace, Forward);
+        "M-o" => run_internal!(drag_workspace, Backward);
 
         // Layout management
-        "M-A-Up" => run_internal!(update_max_main, Less);
-        "M-A-Down" => run_internal!(update_max_main, More);
-        // "M-A-Right" => run_internal!(update_main_ratio, More);
-        // "M-A-Left" => run_internal!(update_main_ratio, Less);
+        "M-A-Left" => run_internal!(update_max_main, More);
+        "M-A-Right" => run_internal!(update_max_main, Less);
+        "M-A-Down" => run_internal!(update_main_ratio, More);
+        "M-A-Up" => run_internal!(update_main_ratio, Less);
 
         "M-A-s" => run_internal!(detect_screens);
         "M-A-Escape" => run_internal!(exit);

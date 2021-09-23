@@ -1,13 +1,10 @@
 use penrose::{
     core::{
-        client::Client,
-        data_types::Region,
         hooks::Hook,
         manager::WindowManager,
-        xconnection::{XConn, Xid},
+        xconnection::{XConn},
     },
-    draw::{Color, DrawContext, Widget},
-    Result, Selector,
+    Result,
 };
 
 pub struct StartupScript {
