@@ -36,7 +36,6 @@ use std::convert::TryFrom;
 use tracing::info;
 
 pub const FONT: &str = "ProFontIIx Nerd Font";
-// pub const FONT: &str = "FiraCode Nerd Font";
 pub const HEIGHT: usize = 18;
 
 pub const BLACK: &str = "#282828";
@@ -162,8 +161,8 @@ fn main() -> Result<()> {
         // client management
         "M-j" => run_internal!(cycle_client, Forward);
         "M-k" => run_internal!(cycle_client, Backward);
-        "M-h" => run_internal!(cycle_screen, Forward);
-        "M-l" => run_internal!(cycle_screen, Backward);
+        "M-h" => run_internal!(cycle_screen, Backward);
+        "M-l" => run_internal!(cycle_screen, Forward);
         "M-q" => run_internal!(kill_client);
         "M-F" => run_internal!(toggle_client_fullscreen, &Selector::Focused);
 
