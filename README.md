@@ -1,10 +1,11 @@
 # My Penrose Window Manager Setup
-A customized tiling window manger configuration for X11 linux.
+A customized tiling window manger configuration for X11 linux, using [Penrose](https://github.com/sminez/penrose).
+Also utilizing dmenu app launcher, alacritty, rust-dwm-bar and nitrogen background manager.
 
 ## Installation:
 Install dependencies (Ubuntu 22.04):
 ```shell
-sudo apt install -y librust-glib-dev librust-pango-dev libxrandr-dev libxcb-randr0-dev  dmenu libdbus-dev
+sudo apt install -y librust-glib-dev librust-pango-dev libxrandr-dev libxcb-randr0-dev  dmenu libdbus-dev nitrogen
 ```
 
 Now install default software, (assuming those software specific dependencies are satisfied)
@@ -46,5 +47,6 @@ Here are the most important keybindings to control the window manager
 'Meta' + 'Enter' to spawn alacritty terminal
 'Meta' + 'q' to quit window
 'Meta' + ',' to spawn dmenu prompt for application runner
+'Meta' + 'Alt' + ['Up', 'Down', 'Left', 'Right'] to change tiling layout
 
 For a complete binding list, check out 'src/main.rs'

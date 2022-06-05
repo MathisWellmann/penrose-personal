@@ -17,6 +17,7 @@ fi
 # xrandr --output HDMI-0 --rotate left --left-of DVI-D-0 &&
 setxkbmap de &&
 rust-dwm-status &
+nitrogen --set-zoom-fill ~/wallpaper.jpg &
 exec penrose-personal
 
 # exec gnome-session
