@@ -4,7 +4,7 @@ A customized tiling window manger configuration for X11 linux.
 ## Installation:
 Install dependencies (Ubuntu 22.04):
 ```shell
-sudo apt install -y librust-glib-dev librust-pango-dev libxrandr-dev libxcb-randr0-dev  dmenu
+sudo apt install -y librust-glib-dev librust-pango-dev libxrandr-dev libxcb-randr0-dev  dmenu libdbus-dev
 ```
 
 Now install default software, (assuming those software specific dependencies are satisfied)
@@ -12,7 +12,16 @@ Now install default software, (assuming those software specific dependencies are
 cargo install alacritty joshuto
 ```
 
-Build and compile
+For a nice status bar install the following:
+```shell
+cd ~/Downloads
+git clone https://github.com/MathisWellmann/rust-dwm-status
+cd rust-dwm-status
+cargo build --release
+sudo cp target/release/rust-dwm-status /usr/bin/
+```
+
+Build and compile in this repos directory
 ```shell
 cargo build --release
 ```
@@ -27,3 +36,4 @@ Now copy the (possibly modified) '.xinitrc' to '~/.xinitrc'
 cp .xinitrc ~/.xinitrc
 ```
 
+Now the desktop environment is ready for usage with the 'startx' command from a raw command line
