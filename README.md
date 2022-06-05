@@ -2,6 +2,9 @@
 A customized tiling window manger configuration for X11 linux, using [Penrose](https://github.com/sminez/penrose).
 Also utilizing dmenu app launcher, alacritty, rust-dwm-bar and nitrogen background manager.
 
+As the base system I'm using Ubuntu 22.04 with Zfs encrypted root following this [Guide](https://www.medo64.com/2022/05/installing-uefi-zfs-root-on-ubuntu-22-04/)
+I highly recommend having [Zrepl](https://github.com/zrepl/zrepl) setup for automatic periodic Zfs snapshotting and backup.
+
 ## Installation:
 Install dependencies (Ubuntu 22.04):
 ```shell
