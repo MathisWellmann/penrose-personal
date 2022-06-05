@@ -37,3 +37,14 @@ cp .xinitrc ~/.xinitrc
 ```
 
 Now the desktop environment is ready for usage with the 'startx' command from a raw command line
+
+### Keymap
+Here are the most important keybindings to control the window manager
+
+'Meta' + ['h', 'j', 'k', 'l'] to navigate between windows
+'Meta' + [ 1 .. 9 ] to switch between workspaces
+'Meta' + 'Enter' to spawn alacritty terminal
+'Meta' + 'q' to quit window
+'Meta' + ',' to spawn dmenu prompt for application runner
+
+For a complete binding list, check out 'src/main.rs'
