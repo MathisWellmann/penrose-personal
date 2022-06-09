@@ -13,16 +13,11 @@ sudo apt -y dist-upgrade
 sudo apt install -y build-essential librust-glib-dev librust-pango-dev libxrandr-dev libxcb-randr0-dev  dmenu libdbus-dev nitrogen
 ```
 
-Also make sure to have the Rust toolchan and all nice cargo related features installed:
+Now install rust based software, (assuming those software specific dependencies are satisfied)
 ```shell
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup install nightly
-cargo install cargo-udeps
-```
-
-Now install default software, (assuming those software specific dependencies are satisfied)
-```shell
-cargo install alacritty joshuto lsd ripgrep nu starship rusty-rain gitui skim
+cargo install alacritty joshuto lsd ripgrep nu starship rusty-rain gitui skim cargo-udeps cargo-multi
 ```
 
 For a nice status bar install the following:
