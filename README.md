@@ -8,7 +8,16 @@ I highly recommend having [Zrepl](https://github.com/zrepl/zrepl) setup for auto
 ## Installation:
 Install dependencies (Ubuntu 22.04):
 ```shell
-sudo apt install -y librust-glib-dev librust-pango-dev libxrandr-dev libxcb-randr0-dev  dmenu libdbus-dev nitrogen
+sudo apt -y update
+sudo apt -y dist-upgrade
+sudo apt install -y build-essential librust-glib-dev librust-pango-dev libxrandr-dev libxcb-randr0-dev  dmenu libdbus-dev nitrogen
+```
+
+Also make sure to have the Rust toolchan and all nice cargo related features installed:
+```shell
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup install nightly
+cargo install cargo-udeps
 ```
 
 Now install default software, (assuming those software specific dependencies are satisfied)
@@ -47,6 +56,11 @@ Place nu shells configuration to appropriate location
 ```shell
 mkdir ~/.config/nu
 cp nu/config.toml ~/.config/nu/
+```
+
+Prepare wallpapers:
+```shell
+cp -r wallpapers ~/
 ```
 
 Build and compile in this repos directory
