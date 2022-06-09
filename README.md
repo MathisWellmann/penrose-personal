@@ -25,6 +25,18 @@ cargo build --release
 sudo cp target/release/rust-dwm-status /usr/bin/
 ```
 
+To install Terminess font do:
+```shell
+mkdir ~/local/share/fonts
+cp fonts/* ~/.local/share/fonts
+```
+
+Place alacritty config to appropriate location
+```shell
+mkdir ~/.config/alacritty
+cp alacritty.yml ~/.config/alacritty/
+```
+
 Build and compile in this repos directory
 ```shell
 cargo build --release
