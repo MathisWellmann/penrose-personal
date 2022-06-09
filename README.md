@@ -13,7 +13,7 @@ sudo apt install -y librust-glib-dev librust-pango-dev libxrandr-dev libxcb-rand
 
 Now install default software, (assuming those software specific dependencies are satisfied)
 ```shell
-cargo install alacritty joshuto
+cargo install alacritty joshuto lsd ripgrep nu starship rusty-rain gitui skim
 ```
 
 For a nice status bar install the following:
@@ -35,6 +35,18 @@ Place alacritty config to appropriate location
 ```shell
 mkdir ~/.config/alacritty
 cp alacritty.yml ~/.config/alacritty/
+```
+
+Setup starship prompt:
+```shell
+mkdir ~/.cache/starship
+starship init nu | save ~/.cache/starship/init.nu
+```
+
+Place nu shells configuration to appropriate location
+```shell
+mkdir ~/.config/nu
+cp nu/config.toml ~/.config/nu/
 ```
 
 Build and compile in this repos directory
