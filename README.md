@@ -2,9 +2,6 @@
 A customized tiling window manger configuration for X11 linux, using [Penrose](https://github.com/sminez/penrose).
 Also utilizing dmenu app launcher, alacritty, rust-dwm-bar and nitrogen background manager.
 
-As the base system I'm using Ubuntu 22.04 with Zfs encrypted root following this [Guide](https://www.medo64.com/2022/05/installing-uefi-zfs-root-on-ubuntu-22-04/)
-I highly recommend having [Zrepl](https://github.com/zrepl/zrepl) setup for automatic periodic Zfs snapshotting and backup.
-
 ## Installation:
 Install dependencies (Ubuntu 22.04):
 ```shell
@@ -17,7 +14,7 @@ Install dependencies (arch):
 
 ```shell
 sudo pacman -Sy
-sudo pacman -S cmake pkg-config fontconfig python3 cairo pango xorg-xinit
+sudo pacman -S cmake pkg-config fontconfig python3 cairo pango xorg-xinit xorg-server
 ```
 
 Now install rust based software, (assuming those software specific dependencies are satisfied)
@@ -71,12 +68,12 @@ cargo build --release
 
 Now copy the compiled file to where it can be executed globally
 ```shell
-sudo cp ./target/release/penrose-personal /usr/bin/penrose-personal
+sudo cp ./target/release/penrose-personal /usr/bin/
 ```
 
 Now copy the (possibly modified) '.xinitrc' to '~/.xinitrc'
 ```shell
-cp .xinitrc ~/.xinitrc
+cp .xinitrc ~
 ```
 
 Now the desktop environment is ready for usage with the 'startx' command from a raw command line
