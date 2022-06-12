@@ -7,7 +7,7 @@ Install dependencies (Ubuntu 22.04):
 ```shell
 sudo apt -y update
 sudo apt -y dist-upgrade
-sudo apt install -y build-essential librust-glib-dev librust-pango-dev libxrandr-dev libxcb-randr0-dev  dmenu libdbus-dev nitrogen
+sudo apt install -y build-essential librust-glib-dev librust-pango-dev libxrandr-dev libxcb-randr0-dev  dmenu libdbus-dev nitrogen acpilight
 ```
 
 Install dependencies (arch):
