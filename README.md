@@ -17,7 +17,7 @@ Install dependencies (arch):
 
 ```shell
 sudo pacman -Sy
-sudo pacman -S cmake pkg-config fontconfig python3
+sudo pacman -S cmake pkg-config fontconfig python3 cairo pango
 ```
 
 Now install rust based software, (assuming those software specific dependencies are satisfied)
