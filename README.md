@@ -38,7 +38,7 @@ sudo cp target/release/rust-dwm-status /usr/bin/
 
 To install Terminess font do:
 ```shell
-mkdir ~/local/share/fonts
+mkdir -p ~/.local/share/fonts
 cp fonts/* ~/.local/share/fonts
 ```
 
