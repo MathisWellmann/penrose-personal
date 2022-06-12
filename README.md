@@ -13,6 +13,13 @@ sudo apt -y dist-upgrade
 sudo apt install -y build-essential librust-glib-dev librust-pango-dev libxrandr-dev libxcb-randr0-dev  dmenu libdbus-dev nitrogen
 ```
 
+Install dependencies (arch):
+
+```shell
+sudo pacman -Sy
+sudo pacman -S cmake pkg-config fontconfig 
+```
+
 Now install rust based software, (assuming those software specific dependencies are satisfied)
 ```shell
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
