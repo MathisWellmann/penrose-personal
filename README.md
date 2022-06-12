@@ -7,14 +7,14 @@ Install dependencies (Ubuntu 22.04):
 ```shell
 sudo apt -y update
 sudo apt -y dist-upgrade
-sudo apt install -y build-essential librust-glib-dev librust-pango-dev libxrandr-dev libxcb-randr0-dev  dmenu libdbus-dev nitrogen acpilight
+sudo apt install -y build-essential librust-glib-dev librust-pango-dev libxrandr-dev libxcb-randr0-dev  dmenu libdbus-dev nitrogen
 ```
 
 Install dependencies (arch):
 
 ```shell
 sudo pacman -Sy
-sudo pacman -S cmake pkg-config fontconfig python3 cairo pango xorg-xinit xorg-server nitrogen firefox dmenu
+sudo pacman -S cmake pkg-config fontconfig python3 cairo pango xorg-xinit xorg-server nitrogen firefox dmenu acpilight fzf
 ```
 
 Now install rust based software, (assuming those software specific dependencies are satisfied)
