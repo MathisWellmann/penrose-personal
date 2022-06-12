@@ -56,8 +56,7 @@ starship init nu > ~/.cache/starship/init.nu
 
 Place nu shells configuration to appropriate location
 ```shell
-mkdir ~/.config/nu
-cp nu/config.toml ~/.config/nu/
+cp -r nushell/config.toml ~/.config/
 ```
 
 Prepare wallpapers:
