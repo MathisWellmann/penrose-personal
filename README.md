@@ -44,7 +44,7 @@ cp fonts/* ~/.local/share/fonts
 
 Place alacritty config to appropriate location
 ```shell
-mkdir ~/.config/alacritty
+mkdir -p ~/.config/alacritty
 cp alacritty.yml ~/.config/alacritty/
 ```
 
