@@ -50,8 +50,8 @@ cp alacritty.yml ~/.config/alacritty/
 
 Setup starship prompt:
 ```shell
-mkdir ~/.cache/starship
-starship init nu | save ~/.cache/starship/init.nu
+mkdir -p ~/.cache/starship
+starship init nu > ~/.cache/starship/init.nu
 ```
 
 Place nu shells configuration to appropriate location
