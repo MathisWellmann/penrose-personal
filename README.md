@@ -14,7 +14,7 @@ Install dependencies (arch):
 
 ```shell
 sudo pacman -Sy
-sudo pacman -S cmake pkg-config fontconfig python3 cairo pango xorg-xinit xorg-server nitrogen firefox dmenu acpilight fzf
+sudo pacman -S cmake pkg-config fontconfig python3 cairo pango xorg-xinit xorg-server nitrogen firefox dmenu acpilight fzf polybar
 ```
 
 Now install rust based software, (assuming those software specific dependencies are satisfied)
@@ -24,25 +24,10 @@ rustup install nightly
 cargo install alacritty joshuto lsd ripgrep nu starship rusty-rain gitui skim cargo-udeps cargo-multi tokei bottom
 ```
 
-For a nice status bar install the following:
-```shell
-cd ~/Downloads
-git clone https://github.com/MathisWellmann/rust-dwm-status
-cd rust-dwm-status
-cargo build --release
-sudo cp target/release/rust-dwm-status /usr/bin/
-```
-
 To install Terminess font do:
 ```shell
 mkdir -p ~/.local/share/fonts
 cp fonts/* ~/.local/share/fonts
-```
-
-Place alacritty config to appropriate location
-```shell
-mkdir -p ~/.config/alacritty
-cp alacritty.yml ~/.config/alacritty/
 ```
 
 Setup starship prompt:
@@ -51,10 +36,10 @@ mkdir -p ~/.cache/starship
 starship init nu > ~/.cache/starship/init.nu
 ```
 
-Place nu shells configuration to appropriate location
+Place config files to appropriate location
 ```shell
-cp -r nushell/config.toml ~/.config/
-```
+cp -r .config ~
+``` 
 
 Prepare wallpapers:
 ```shell
