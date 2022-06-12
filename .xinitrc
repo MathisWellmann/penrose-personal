@@ -17,6 +17,7 @@ fi
 # xrandr --output HDMI-0 --rotate left --left-of DVI-D-0 &&
 setxkbmap de &&
 polybar &
+picom &
 nitrogen --set-zoom-fill --random ~/wallpapers &
 exec penrose-personal
 
