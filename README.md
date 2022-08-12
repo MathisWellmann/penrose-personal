@@ -6,7 +6,7 @@ Also utilizing dmenu app launcher, alacritty, and nitrogen background manager.
 Install dependencies (arch):
 
 ```shell
-sudo pacman -Sy
+sudo pacman -Syu
 sudo pacman -S cmake pkg-config fontconfig python3 cairo pango xorg-xinit xorg-server nitrogen firefox dmenu acpilight fzf polybar rust-analyzer picom
 ```
 
