@@ -1,15 +1,8 @@
 # My Penrose Window Manager Setup
 A customized tiling window manger configuration for X11 linux, using [Penrose](https://github.com/sminez/penrose).
-Also utilizing dmenu app launcher, alacritty, rust-dwm-bar and nitrogen background manager.
+Also utilizing dmenu app launcher, alacritty, and nitrogen background manager.
 
 ## Installation:
-Install dependencies (Ubuntu 22.04):
-```shell
-sudo apt -y update
-sudo apt -y dist-upgrade
-sudo apt install -y build-essential librust-glib-dev librust-pango-dev libxrandr-dev libxcb-randr0-dev  dmenu libdbus-dev nitrogen
-```
-
 Install dependencies (arch):
 
 ```shell
