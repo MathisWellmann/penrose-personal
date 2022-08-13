@@ -410,6 +410,8 @@ alias dt = date now
 alias pg = ping google.de
 alias fmt = cargo +nightly fmt --all
 alias udeps = cargo +nightly udeps --all-targets
+alias dim = sudo xbacklight -set 20
+alias bright = sudo xbacklight -set 100
 
 def "dt_uk" [] { date now | date to-timezone Europe/London }
 def "wtr" [] { curl wttr.in/~wittmund }

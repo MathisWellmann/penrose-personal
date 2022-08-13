@@ -15,6 +15,13 @@ fi
 # xrandr --output DVI-D-0 --rotate left && 
 # xrandr --output DP-0 --rotate left --right-of DVI-D-0 &&
 # xrandr --output HDMI-0 --rotate left --left-of DVI-D-0 &&
+
+# Vertical screen on left
+#xrandr --output HDMI-1-0 --rotate left --preferred --left-of eDP-1
+
+# Horizontal portable monitor on right
+xrandr --output HDMI-1-0 --preferred --right-of eDP-1
+
 setxkbmap de &&
 polybar &
 picom &

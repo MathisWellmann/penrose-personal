@@ -2,6 +2,8 @@
 A customized tiling window manger configuration for X11 linux, using [Penrose](https://github.com/sminez/penrose).
 Also utilizing dmenu app launcher, alacritty, rust-dwm-bar and nitrogen background manager.
 
+![screenshot](readme_img/screenshot.png)
+
 ## Installation:
 Install dependencies (Ubuntu 22.04):
 ```shell
