@@ -16,7 +16,8 @@ Now install rust based software, (assuming those software specific dependencies 
 ```shell
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup install nightly
-cargo install alacritty joshuto lsd ripgrep nu starship rusty-rain gitui skim cargo-udeps cargo-multi tokei bottom
+cargo install alacritty joshuto lsd ripgrep nu starship rusty-rain gitui skim tokei bottom
+cargo install cargo-udeps cargo-multi cargo-outdated cargo-semver-checks cargo-expand
 ```
 
 To install Terminess font do:
