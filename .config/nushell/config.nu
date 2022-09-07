@@ -188,7 +188,6 @@ let-env config = {
   quick_completions: true  # set this to false to prevent auto-selecting completions when only one remains
   partial_completions: true  # set this to false to prevent partial filling of the prompt
   completion_algorithm: "prefix"  # prefix, fuzzy
-  animate_prompt: false # redraw the prompt every second
   float_precision: 2
   # buffer_editor: "emacs" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
   use_ansi_coloring: true
@@ -212,6 +211,7 @@ let-env config = {
       }]
     }
   }
+  show_banner: false,
   menus: [
       # Configuration for default nushell menus
       # Note the lack of souce parameter
@@ -412,8 +412,10 @@ alias fmt = cargo +nightly fmt --all
 alias udeps = cargo +nightly udeps --all-targets
 alias dim = sudo xbacklight -set 20
 alias bright = sudo xbacklight -set 100
+alias night = redshift -P -O 5000
 
 def "dt_uk" [] { date now | date to-timezone Europe/London }
+def "dt_bz" [] { date now | date to-timezone America/Buenos_Aires }
 def "wtr" [] { curl wttr.in/~wittmund }
 def "mnt_bac" [] { 
   sudo cryptsetup luksOpen /dev/sdc1 backup;
