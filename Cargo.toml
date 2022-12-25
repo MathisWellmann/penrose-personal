@@ -1,18 +1,15 @@
 [package]
 name = "penrose-personal"
-version = "0.1.5"
+version = "0.2.0"
 authors = ["MathisWellmann <wellmannmathis@gmail.com>"]
 edition = "2021"
 license = "GNU AGPLv3-or-later"
 publish = false
 readme = "README.md"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
-penrose = { version = "^0.2", features = [ "xcb", "xcb_draw", "keysyms", "serde" ] }
-simplelog = "^0.8"
-tracing = { version = "^0.1", features = ["attributes", "log"] }
+penrose = { version = "^0.3", features = ["keysyms", "serde"] }
+tracing-subscriber = { version = "^0.3", features = ["env-filter"] }
 
 [profile.release]
 lto = "fat"

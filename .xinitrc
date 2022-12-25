@@ -12,23 +12,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-# xrandr --output DVI-D-0 --rotate left && 
-# xrandr --output DP-0 --rotate left --right-of DVI-D-0 &&
-# xrandr --output HDMI-0 --rotate left --left-of DVI-D-0 &&
+xrandr --output DP-2 --rotate left && 
+xrandr --output DP-0 --rotate left --right-of DP-2 &&
+xrandr --output DP-4 --rotate left --left-of DP-2 &&
 
-# Vertical screen on left
-#xrandr --output HDMI-1-0 --rotate left --preferred --left-of eDP-1
-
-# Horizontal portable monitor on right
-xrandr --output HDMI-1-0 --preferred --right-of eDP-1
-
-setxkbmap de &&
 polybar &
 picom &
 nitrogen --set-zoom-fill --random ~/wallpapers &
 exec penrose-personal
-
-# exec gnome-session
-# exec startkde
-# exec startxfce4
-# ...or the Window Manager of your choice
