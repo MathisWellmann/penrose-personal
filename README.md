@@ -9,7 +9,7 @@ Install dependencies (arch):
 
 ```shell
 sudo pacman -Syu
-sudo pacman -S cmake pkg-config fontconfig python3 cairo pango xorg-xinit xorg-server nitrogen firefox dmenu acpilight fzf polybar rust-analyzer picom htop barrier neofetch openssh tree clang
+sudo pacman -S cmake pkg-config fontconfig python3 cairo pango xorg-xinit xorg-server nitrogen firefox dmenu acpilight fzf polybar rust-analyzer picom htop barrier neofetch openssh tree clang nvtop
 ```
 
 Now install rust based software, (assuming those software specific dependencies are satisfied)
