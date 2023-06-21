@@ -544,5 +544,5 @@ alias crr = cargo run --release
 alias cte = cargo test
 
 source ~/.cache/starship/init.nu
-source ~/.zoxide.nu
+source ~/.config/nushell/.zoxide.nu
 
