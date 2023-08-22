@@ -4,6 +4,8 @@ Also utilizing dmenu app launcher, alacritty, and nitrogen background manager.
 
 ![screenshot](readme_img/screenshot.png)
 
+⚠️ As I'm moving mostly over to nixos so this repo receives little attention nowadays. I mean look at all those manual installation steps. 
+
 ## Installation:
 Install dependencies (arch):
 
