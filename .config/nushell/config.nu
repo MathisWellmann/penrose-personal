@@ -166,23 +166,15 @@ let light_theme = {
     shape_variable: purple
 }
 
-# External completer example
-# let carapace_completer = {|spans|
-#     carapace $spans.0 nushell $spans | from json
-# }
-
 
 # The default config record. This is where much of your global configuration is setup.
-let-env config = {
+$env.config = {
   ls: {
     use_ls_colors: true # use the LS_COLORS environment variable to colorize output
     clickable_links: true # enable or disable clickable links. Your terminal has to support links.
   }
   rm: {
     always_trash: false # always act as if -t was given. Can be overridden with -p
-  }
-  cd: {
-    abbreviations: false # allows `cd s/o/f` to expand to `cd some/other/folder`
   }
   table: {
     mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
@@ -531,6 +523,7 @@ alias la = lsd -la
 alias dt = date now
 alias udeps = cargo +nightly udeps --all-targets
 alias night = redshift -P -O 5000
+alias bright = sudo xbacklight -set 100
 
 # Cargo
 alias fmt = cargo +nightly fmt --all
@@ -544,5 +537,5 @@ alias crr = cargo run --release
 alias cte = cargo test
 
 source ~/.cache/starship/init.nu
-source ~/.config/nushell/.zoxide.nu
+source ~/.zoxide.nu
 
