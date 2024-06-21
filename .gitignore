@@ -1,4 +1,4 @@
 /target
 /vendor
 /.idea
-Cargo.lock
+result
